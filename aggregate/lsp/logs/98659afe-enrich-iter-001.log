@@ -1,0 +1,47 @@
+[2026-09-19T11:28:15Z] === ENRICH ITERATION 1 START | repo=prompt-toolkit/python-prompt-toolkit sha=98659afe ===
+[2026-09-19T11:28:15Z] [iter=1] PHASE START: enrich repo=prompt-toolkit/python-prompt-toolkit sha=98659afe runlog=/home/runner/work/forx/forx/storage/aggregate/lsp/logs/98659afe-enrich-iter-001.log output=/home/runner/work/forx/forx/storage/aggregate/lsp/98659afe4de61732caa6987c3b6d7935235a0fad.nq.gz
+[2026-09-19T11:28:15Z] [iter=1] Step 1: Loading AST into disk-backed store mem_mb=78 MB
+[2026-09-19T11:28:31Z] [iter=1] AST store loaded triples=1669584 load_secs=16 mem_mb=986 MB
+[2026-09-19T11:28:31Z] [iter=1] Step 2: Finding LSP targets mem_mb=986 MB
+[2026-09-19T11:28:33Z] [iter=1] LSP targets found call_sites=9104 imports=0 extends=0 implements=0 secs=2
+[2026-09-19T11:28:34Z] [iter=1] Step 2.7: Building position index (one-shot, shared across resolvers) mem_mb=986 MB
+[2026-09-19T11:28:40Z] [iter=1] Position index built positions=114479 nodes_with_types=148183 secs=5 mem_mb=986 MB
+[2026-09-19T11:28:40Z] [iter=1] Step 3: Starting LSP resolution mem_mb=986 MB already_completed_types=[] already_completed_files=0
+[2026-09-19T11:28:40Z] [iter=1] Resolving target type target_type=call_site count=9104
+[2026-09-19T11:28:45Z] [iter=1] HEARTBEAT target_type=call_site elapsed_min=0.5 files_done=2 resolved=15 errors=12 current=src/prompt_toolkit/styles/style.py
+[2026-09-19T11:29:16Z] [iter=1] HEARTBEAT target_type=call_site elapsed_min=1.0 files_done=6 resolved=143 errors=90 current=src/prompt_toolkit/application/application.py
+[2026-09-19T11:30:16Z] [iter=1] HEARTBEAT target_type=call_site elapsed_min=2.0 files_done=7 resolved=264 errors=252 current=src/prompt_toolkit/shortcuts/dialogs.py
+[2026-09-19T11:33:51Z] [iter=1] HEARTBEAT target_type=call_site elapsed_min=5.6 files_done=9 resolved=329 errors=789 current=src/prompt_toolkit/layout/menus.py
+[2026-09-19T11:34:22Z] [iter=1] HEARTBEAT target_type=call_site elapsed_min=6.1 files_done=10 resolved=390 errors=873 current=src/prompt_toolkit/layout/dimension.py
+[2026-09-19T11:35:43Z] [iter=1] HEARTBEAT target_type=call_site elapsed_min=7.5 files_done=13 resolved=431 errors=1099 current=src/prompt_toolkit/output/conemu.py
+[2026-09-19T11:37:21Z] [iter=1] HEARTBEAT target_type=call_site elapsed_min=9.1 files_done=15 resolved=436 errors=1362 current=examples/full-screen/simple-demos/horizontal-align.py
+[2026-09-19T11:38:04Z] [iter=1] HEARTBEAT target_type=call_site elapsed_min=9.8 files_done=17 resolved=465 errors=1481 current=setup.py
+[2026-09-19T11:39:23Z] [iter=1] HEARTBEAT target_type=call_site elapsed_min=11.1 files_done=19 resolved=625 errors=1669 current=examples/prompts/get-password-with-toggle-display-shortcut.py
+[2026-09-19T11:40:26Z] [iter=1] HEARTBEAT target_type=call_site elapsed_min=12.2 files_done=22 resolved=635 errors=1845 current=src/prompt_toolkit/document.py
+[2026-09-19T11:41:06Z] [iter=1] HEARTBEAT target_type=call_site elapsed_min=12.9 files_done=24 resolved=812 errors=1953 current=src/prompt_toolkit/key_binding/bindings/named_commands.py
+[2026-09-19T11:41:56Z] [iter=1] HEARTBEAT target_type=call_site elapsed_min=13.7 files_done=25 resolved=834 errors=2077 current=examples/full-screen/text-editor.py
+[2026-09-19T11:42:44Z] [iter=1] HEARTBEAT target_type=call_site elapsed_min=14.5 files_done=28 resolved=954 errors=2204 current=tests/test_cli.py
+[2026-09-19T11:43:32Z] [iter=1] HEARTBEAT target_type=call_site elapsed_min=15.3 files_done=29 resolved=977 errors=2339 current=src/prompt_toolkit/output/win32.py
+[2026-09-19T11:44:02Z] [iter=1] HEARTBEAT target_type=call_site elapsed_min=15.8 files_done=31 resolved=1049 errors=2418 current=src/prompt_toolkit/input/win32.py
+[2026-09-19T11:44:59Z] [iter=1] HEARTBEAT target_type=call_site elapsed_min=16.7 files_done=34 resolved=1168 errors=2574 current=examples/prompts/auto-completion/multi-column-autocompletion-with-meta.py
+[2026-09-19T11:46:50Z] [iter=1] HEARTBEAT target_type=call_site elapsed_min=18.6 files_done=37 resolved=1320 errors=2884 current=examples/progress-bar/a-lot-of-parallel-tasks.py
+[2026-09-19T11:47:35Z] [iter=1] HEARTBEAT target_type=call_site elapsed_min=19.3 files_done=40 resolved=1376 errors=3009 current=src/prompt_toolkit/key_binding/bindings/scroll.py
+[2026-09-19T11:48:06Z] [iter=1] HEARTBEAT target_type=call_site elapsed_min=19.8 files_done=47 resolved=1498 errors=3084 current=examples/full-screen/simple-demos/float-transparency.py
+[2026-09-19T11:48:47Z] [iter=1] HEARTBEAT target_type=call_site elapsed_min=20.5 files_done=51 resolved=1537 errors=3194 current=src/prompt_toolkit/search.py
+[2026-09-19T11:49:20Z] [iter=1] HEARTBEAT target_type=call_site elapsed_min=21.1 files_done=59 resolved=1640 errors=3282 current=src/prompt_toolkit/contrib/telnet/protocol.py
+[2026-09-19T11:49:51Z] [iter=1] HEARTBEAT target_type=call_site elapsed_min=21.6 files_done=63 resolved=1748 errors=3368 current=src/prompt_toolkit/contrib/regular_languages/compiler.py
+[2026-09-19T11:50:30Z] [iter=1] HEARTBEAT target_type=call_site elapsed_min=22.3 files_done=68 resolved=1871 errors=3475 current=tests/test_filter.py
+[2026-09-19T11:51:00Z] [iter=1] HEARTBEAT target_type=call_site elapsed_min=22.8 files_done=71 resolved=1958 errors=3558 current=examples/print-text/ansi.py
+[2026-09-19T11:51:31Z] [iter=1] HEARTBEAT target_type=call_site elapsed_min=23.3 files_done=74 resolved=2020 errors=3645 current=examples/full-screen/simple-demos/horizontal-split.py
+[2026-09-19T11:52:02Z] [iter=1] HEARTBEAT target_type=call_site elapsed_min=23.8 files_done=80 resolved=2073 errors=3731 current=src/prompt_toolkit/formatted_text/html.py
+[2026-09-19T11:52:36Z] [iter=1] HEARTBEAT target_type=call_site elapsed_min=24.3 files_done=86 resolved=2147 errors=3820 current=examples/full-screen/simple-demos/vertical-align.py
+[2026-09-19T11:53:22Z] [iter=1] HEARTBEAT target_type=call_site elapsed_min=25.1 files_done=93 resolved=2219 errors=3947 current=src/prompt_toolkit/output/windows10.py
+[2026-09-19T11:53:52Z] [iter=1] HEARTBEAT target_type=call_site elapsed_min=25.6 files_done=108 resolved=2305 errors=4031 current=src/prompt_toolkit/completion/filesystem.py
+[2026-09-19T11:54:27Z] [iter=1] HEARTBEAT target_type=call_site elapsed_min=26.2 files_done=130 resolved=2403 errors=4128 current=src/prompt_toolkit/input/defaults.py
+[2026-09-19T11:54:57Z] [iter=1] HEARTBEAT target_type=call_site elapsed_min=26.7 files_done=155 resolved=2507 errors=4210 current=examples/full-screen/simple-demos/autocompletion.py
+[2026-09-19T11:55:30Z] [iter=1] HEARTBEAT target_type=call_site elapsed_min=27.3 files_done=181 resolved=2633 errors=4301 current=examples/prompts/auto-completion/autocompletion-like-readline.py
+[2026-09-19T11:56:00Z] [iter=1] HEARTBEAT target_type=call_site elapsed_min=27.8 files_done=211 resolved=2731 errors=4384 current=examples/dialogs/button_dialog.py
+[2026-09-19T11:56:20Z] [iter=1] Target type resolved target_type=call_site resolved=2808 errors=4436 secs=1660 mem_mb=986 MB
+[2026-09-19T11:56:26Z] [iter=1] Step 5: Writing final enrichment file triples=89166
+[2026-09-19T11:56:28Z] [iter=1] Enrichment file written path=/home/runner/work/forx/forx/storage/aggregate/lsp/98659afe4de61732caa6987c3b6d7935235a0fad.nq.gz size_kb=2151
+[2026-09-19T11:56:28Z] [iter=1] PHASE END: enrich elapsed_s=1693 elapsed_min=28.2 total_triples=89166
