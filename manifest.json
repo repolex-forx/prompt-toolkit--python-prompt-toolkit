@@ -21461,6 +21461,46 @@
       ],
       "ast": [
         "aggregate/ast/d6c367bfab407c61c9ce24458f2194630ce7fd8b/chunk-001.nq.gz"
+      ],
+      "lsp": "aggregate/lsp/d6c367bfab407c61c9ce24458f2194630ce7fd8b.nq.gz",
+      "dependencies": [
+        {
+          "packageName": "pygments",
+          "ecosystem": "PYPI",
+          "version": "2.21.0",
+          "githubOrg": "pygments",
+          "githubRepo": "pygments",
+          "githubCommit": "a43b45dcf081b6010c6ab4428f149f7f6d2499c4",
+          "githubTag": "2.21.0",
+          "githubUrl": "https://github.com/pygments/pygments",
+          "source": "lsp",
+          "install_path": "/home/runner/.local/share/uv/tools/repolex/lib/python3.14/site-packages/pygments/lexers/python.py"
+        },
+        {
+          "packageName": "setuptools",
+          "ecosystem": "PYPI",
+          "version": "84.0.0",
+          "githubOrg": "pypa",
+          "githubRepo": "setuptools",
+          "githubCommit": "72e919a8b10aaafc041205d4e3ae0e6a2e1e5f87",
+          "githubTag": "v84.0.0",
+          "githubUrl": "https://github.com/pypa/setuptools",
+          "source": "lsp",
+          "install_path": "/home/runner/.local/share/uv/tools/repolex/lib/python3.14/site-packages/setuptools/__init__.py"
+        },
+        {
+          "packageName": "typing-extensions",
+          "ecosystem": "PYPI",
+          "version": "4.16.0",
+          "githubOrg": "python",
+          "githubRepo": "typing_extensions",
+          "githubCommit": "f29cd28d8ed7642cafb1d18daf5aa41be6a5c0aa",
+          "githubTag": "4.16.0",
+          "githubUrl": "https://github.com/python/typing_extensions",
+          "source": "lsp",
+          "raw_name": "typing_extensions.py",
+          "install_path": "/home/runner/.local/share/uv/tools/repolex/lib/python3.14/site-packages/typing_extensions.py"
+        }
       ]
     }
   ],
