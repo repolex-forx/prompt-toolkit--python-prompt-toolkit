@@ -6,29 +6,27 @@ RDF knowledge graph data for [prompt-toolkit/python-prompt-toolkit](https://gith
 
 ## How to use this data
 
-The easiest way to get started is to install the [lexq](https://github.com/repolex-ai/lexq) query tool using [uv](https://docs.astral.sh/uv/getting-started/installation/).
-
-If you have uv installed, just copy/paste this into your terminal:
+The easiest way to get started is to install the [rlex](https://github.com/repolex-ai/rlex) query tool:
 
 ```bash
-uv tool install git+https://github.com/repolex-ai/lexq
+cargo install --git https://github.com/repolex-ai/rlex
 ```
 
-This installs lexq onto your system, in your user context. Verify the install:
+Verify the install:
 
 ```bash
-lexq --help
+rlex --help
 ```
 
-**lexq is designed to be used primarily by LLMs in a terminal.** Start up your favorite LLM and ask it to use the lexq tool. It's that easy!
+**rlex is designed to be used primarily by LLMs in a terminal.** Start up your favorite AI assistant and ask it to use rlex. It handles the SPARQL — you just ask questions in plain English.
 
 To load this repo's data:
 
 ```bash
-lexq download prompt-toolkit/python-prompt-toolkit
+rlex download prompt-toolkit/python-prompt-toolkit
 ```
 
-This will automatically download essential data files from the last parsed commit. Consult `lexq --moreinfo` for other options, including downloading multiple commits, blobs, etc.
+Consult `rlex --help` for other options, including SPARQL queries, HTTP server, and interactive visualization.
 
 ## Data structure
 
@@ -43,6 +41,8 @@ All data is stored as gzip-compressed [N-Quads](https://www.w3.org/TR/n-quads/) 
 │   │   ├── 1ff655110b93994d3835b3f5bcfb0eb04d2124d9
 │   │   │   └── chunk-001.nq.gz
 │   │   ├── 2d816ff79fdd1e973f580c29321fdb22fce9de6b
+│   │   │   └── chunk-001.nq.gz
+│   │   ├── 3c4b1d4a2fefe22037b31ea71c236d22dd542785
 │   │   │   └── chunk-001.nq.gz
 │   │   ├── 435bd99cf2abb229c13d5b1106467c7f6af599ed
 │   │   │   └── chunk-001.nq.gz
@@ -94,6 +94,7 @@ All data is stored as gzip-compressed [N-Quads](https://www.w3.org/TR/n-quads/) 
 │   │   ├── 165258d2f3ae594b50f16c7b50ffb06627476269.nq.gz
 │   │   ├── 1ff655110b93994d3835b3f5bcfb0eb04d2124d9.nq.gz
 │   │   ├── 2d816ff79fdd1e973f580c29321fdb22fce9de6b.nq.gz
+│   │   ├── 3c4b1d4a2fefe22037b31ea71c236d22dd542785.nq.gz
 │   │   ├── 435bd99cf2abb229c13d5b1106467c7f6af599ed.nq.gz
 │   │   ├── 4432d6233fd8e0efba5920a9650e515f54a20300.nq.gz
 │   │   ├── 490cf900188df357611cdc9358256be0e5ce2e16.nq.gz
@@ -123,6 +124,8 @@ All data is stored as gzip-compressed [N-Quads](https://www.w3.org/TR/n-quads/) 
 │       ├── 1ff655110b93994d3835b3f5bcfb0eb04d2124d9
 │       │   └── chunk-001.nq.gz
 │       ├── 2d816ff79fdd1e973f580c29321fdb22fce9de6b
+│       │   └── chunk-001.nq.gz
+│       ├── 3c4b1d4a2fefe22037b31ea71c236d22dd542785
 │       │   └── chunk-001.nq.gz
 │       ├── 435bd99cf2abb229c13d5b1106467c7f6af599ed
 │       │   └── chunk-001.nq.gz
@@ -220,6 +223,7 @@ All data is stored as gzip-compressed [N-Quads](https://www.w3.org/TR/n-quads/) 
     ├── 07b81d5ec142613572be36100d4968023e833f38.nq.gz
     ├── 07d1c0cd0d937455d4a2efb5d7070bb600d908ba.nq.gz
     ├── 07db8117e60cbdf66ab46cbb8045497a1538819f.nq.gz
+    ├── 083c189f431e6a046b353cc80a71437520e5f652.nq.gz
     ├── 084548d6669c195c27eab74b6d7e6361384b997d.nq.gz
     ├── 08b32215e3f7b18618d2f9f58243a2a3c5db15b2.nq.gz
     ├── 08bb76287db45ea5d1dc00d656c0414578ae0d36.nq.gz
@@ -288,13 +292,9 @@ All data is stored as gzip-compressed [N-Quads](https://www.w3.org/TR/n-quads/) 
     ├── 13b85048e50e89d3bfaa4076cb84bcf0f2261eee.nq.gz
     ├── 13e44ed4dc947fe7878731fd5063682bac46b281.nq.gz
     ├── 142deab0774c277d021e939e1d2770a19c45dcb3.nq.gz
-    ├── 1474360fd22c1abdb99bafeeb6ba4f507de44804.nq.gz
-    ├── 1475d71228043cbdc4b36b1223161a826b493b45.nq.gz
-    ├── 14e3f311beeaae1c80e7c60495fa80482508cd27.nq.gz
-    ├── 14eb7922c894119d5656d745ba494de6f098d6fc.nq.gz
-    └── 14f945999c6bf5ecd404a98d7e5eefa722275011.nq.gz
+    └── 1474360fd22c1abdb99bafeeb6ba4f507de44804.nq.gz
 
-58 directories, 200 files
+60 directories, 200 files
 ```
 
 | Directory | What it contains |
@@ -308,10 +308,11 @@ All data is stored as gzip-compressed [N-Quads](https://www.w3.org/TR/n-quads/) 
 | `branch/` | Branch metadata. |
 | `tag/` | Tag metadata. |
 | `filetree/` | File tree snapshots per commit (which files existed and their blob SHAs). |
+| `audit/` | Code architecture and graph audit reports per commit. |
 
 ## Source repository
 
 [prompt-toolkit/python-prompt-toolkit](https://github.com/prompt-toolkit/python-prompt-toolkit)
 
 ---
-*Parsed on 2026-09-22 by [repolex](https://repolex.ai)*
+*Parsed on 2026-09-24 by [repolex](https://repolex.ai)*
